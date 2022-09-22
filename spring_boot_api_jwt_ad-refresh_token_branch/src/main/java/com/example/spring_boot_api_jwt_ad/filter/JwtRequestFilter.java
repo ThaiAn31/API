@@ -53,7 +53,7 @@ public class JwtRequestFilter extends OncePerRequestFilter {
 
         if (null != user && null != token && token.getTokenExpDate().after(new Date())) {
 
-            Set<GrantedAuthority> authorities = new HashSet<>();
+             Set<GrantedAuthority> authorities = new HashSet<>();
 
             user.getAuthorities().forEach(
                     p -> authorities.add(new SimpleGrantedAuthority((String) p)));
